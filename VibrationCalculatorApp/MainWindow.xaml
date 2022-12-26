@@ -38,10 +38,10 @@
                     <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="302">
                         <Label Style="{DynamicResource LableForBlack}" Content="Частота" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,7,0,0"/>
                         <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity1" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Width="282" TextChanged="TSensitivity_TextChanged" Margin="18,48,0,0"/>
-                        <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="127" Margin="54,126,0,0">
+                        <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="127" Margin="54,120,0,0">
                             <RadioButton Style="{DynamicResource RadioForBlack}" Content="Гц" GroupName="Frequency" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"/>
                         </Viewbox>
-                        <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="127" Margin="137,126,0,0">
+                        <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="127" Margin="137,120,0,0">
                             <RadioButton Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="Frequency" Content="Об/мин." HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" />
                         </Viewbox>
                     </Grid>
