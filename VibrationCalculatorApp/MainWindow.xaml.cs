@@ -39,7 +39,7 @@ namespace VibrationCalculatorApp {
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-            DragMove();
+           
         }
 
         private void GroupBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
@@ -47,7 +47,7 @@ namespace VibrationCalculatorApp {
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-            DragMove();
+          
         }
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {

@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:VibrationCalculatorApp"
         xmlns:controls="VibrationCalculatorApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="722.756" Width="1051.362" ResizeMode="NoResize" WindowStyle="None" Background="#FFDDE0EA">
+        Title="MainWindow" Height="798.256" Width="1051.362" ResizeMode="NoResize" WindowStyle="None" Background="#FFDDE0EA">
     <Window.Resources>
 
     </Window.Resources>
     <Grid Background="#FF15171E">
-        <Grid HorizontalAlignment="Left" Height="651" VerticalAlignment="Top" Width="1051" Margin="-2,40,0,0">
+        <Grid HorizontalAlignment="Left" Height="651" VerticalAlignment="Top" Width="1051" Margin="-4,110,0,0">
             <Grid HorizontalAlignment="Left" Height="212" VerticalAlignment="Top" Width="322" Margin="22,0,0,0">
                 <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="179" VerticalAlignment="Top" Width="325" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="0,10,-13,0" UseLayoutRounding="False">
                     <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="302">
@@ -44,12 +44,14 @@
                         <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="127" Margin="137,120,0,0">
                             <RadioButton Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="Frequency" Content="Об/мин." HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadioButton_Checked" />
                         </Viewbox>
+                        <Label Style="{DynamicResource LableForBlack}" Content="Vibro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,-82,0,0" FontSize="36" FontFamily="Arial"/>
+                        <Label Style="{DynamicResource LableForBlack}" Content="Calc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="202,-80,0,0" FontSize="36" FontFamily="Arial"/>
                     </Grid>
                 </GroupBox>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="261" VerticalAlignment="Top" Width="342" Margin="693,0,0,0">
+            <Grid HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="342" Margin="693,0,0,0">
                 <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="179" VerticalAlignment="Top" Width="314" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="0,10,10,0" UseLayoutRounding="False">
-                    <Grid HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Width="302">
+                    <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="302">
                         <Label Style="{DynamicResource LableForBlack}" Content="Напряжение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,6,0,0"/>
                         <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="TSensitivity_TextChanged" Margin="16,48,0,0"/>
                         <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="74" Margin="27,95,0,0">
@@ -68,7 +70,7 @@
                 </GroupBox>
             </Grid>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1051" MouseLeftButtonDown="Grid_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown" >
+        <Grid HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1051" MouseLeftButtonDown="Grid_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown" Margin="0,2,0,0" >
             <Grid HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="43" Margin="1008,0,0,0">
                 <Button x:Name="BtnClose" Content="✕" HorizontalAlignment="Left" VerticalAlignment="Top" Width="28" Margin="5,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#7FF5F2F2" FontSize="20" Height="27" Padding="1,-1,1,0" Click="BtnClose_Click" FontWeight="Bold"/>
             </Grid>
@@ -76,12 +78,10 @@
                 <Button x:Name="BtnMinimizate" Content="─" HorizontalAlignment="Left" VerticalAlignment="Top" Width="28" Margin="5,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#7FF5F2F2" FontSize="24" Height="27" Padding="1,-5,1,0" Click="BtnMinimizate_Click" FontWeight="Bold"/>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="955" MouseLeftButtonDown="Grid_MouseLeftButtonDown_1" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown_1">
-                <Polygon Fill="#4CD4D9FB" Points="330,0,350,20,700,20,720,0  ">
-
-                </Polygon>
+                <Rectangle HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="955" Fill="#00000000"/>
             </Grid>
         </Grid>
-        <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Stretch" Height="135.667" VerticalAlignment="Top" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="29.333,248,360.334,0" UseLayoutRounding="False">
+        <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Stretch" Height="135.667" VerticalAlignment="Top" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="27.333,318,362.334,0" UseLayoutRounding="False">
             <Grid HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="649">
                 <Label Style="{DynamicResource LableForBlack}" Content="Ускорение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,5,0,0"/>
                 <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TSensitivity_TextChanged" Margin="17,48,0,0"/>
@@ -99,7 +99,7 @@
                 <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
             </Grid>
         </GroupBox>
-        <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="135.667" VerticalAlignment="Top" Width="661.333" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="0,402.5,360.334,0" UseLayoutRounding="False">
+        <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="135.667" VerticalAlignment="Top" Width="661.333" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="0,472.5,362.334,0" UseLayoutRounding="False">
             <Grid HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="649">
                 <Label Style="{DynamicResource LableForBlack}" Content="Скорость" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,5,0,0"/>
                 <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TSensitivity_TextChanged" Margin="17,48,0,0"/>
@@ -117,7 +117,7 @@
                 <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
             </Grid>
         </GroupBox>
-        <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" Height="135.667" VerticalAlignment="Top" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="29.333,558.5,0,0" UseLayoutRounding="False" Width="661.333">
+        <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" Height="135.667" VerticalAlignment="Top" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="27.333,628.5,0,0" UseLayoutRounding="False" Width="661.333">
             <Grid HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="649">
                 <Label Style="{DynamicResource LableForBlack}" Content="Перемещение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,5,0,0"/>
                 <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity5" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TSensitivity_TextChanged" Margin="17,48,0,0"/>
@@ -135,5 +135,28 @@
                 <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
             </Grid>
         </GroupBox>
+        <Grid HorizontalAlignment="Left" Height="684" VerticalAlignment="Top" Width="1051" Margin="4,110,-4,0">
+            <Grid HorizontalAlignment="Left" Height="212" VerticalAlignment="Top" Width="322" Margin="22,0,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="212" VerticalAlignment="Top" Width="315" Margin="376,0,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="342" Margin="685,0,0,0">
+                <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="449.333" VerticalAlignment="Top" Width="314" Background="#FF1D1F29" BorderBrush="{x:Null}" Margin="0,206.667,10,-468" UseLayoutRounding="False">
+                    <Grid HorizontalAlignment="Left" Height="446" VerticalAlignment="Top" Width="302">
+                        <Label Style="{DynamicResource LableForBlack}" Content="Автоспектры" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,4,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity9" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,58,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy6" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,103,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="Fгр, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,61,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="N, линий" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,103,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy7" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,148,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="∆F, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,148,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="Ближайшие центры каналов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,201,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity9_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,240,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy8" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,285,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="F1, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,243,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="F2, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,285,0,0"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="68" Margin="502,21,0,0" VerticalAlignment="Top" Width="61" Source="2.png" Stretch="Fill" RenderTransformOrigin="-0.332,0.682"/>
     </Grid>
 </Window>
