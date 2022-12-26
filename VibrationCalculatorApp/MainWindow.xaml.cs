@@ -25,5 +25,45 @@ namespace VibrationCalculatorApp {
         private void TSensitivity_TextChanged(object sender, TextChangedEventArgs e) {
 
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e) {
+            Close();
+        }
+
+        private void BtnMinimizate_Click(object sender, RoutedEventArgs e) {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+            DragMove();
+        }
+
+        private void GroupBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+           
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+            DragMove();
+        }
+
+        private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+           
+        }
+
+        private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+           
+        }
+
+        private void Grid_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e) {
+
+        }
+
+        private void Grid_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e) {
+            DragMove();
+        }
     }
 }
