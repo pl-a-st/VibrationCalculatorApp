@@ -63,6 +63,10 @@ namespace VibrationCalculatorApp {
         }
 
         private void Grid_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e) {
+            if(this.WindowState == WindowState.Maximized) {
+                this.WindowState = WindowState.Normal;
+                this.Top = 0;
+            }
             DragMove();
         }
     }
