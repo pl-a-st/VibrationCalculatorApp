@@ -157,6 +157,8 @@
 
                     </Grid>
                 </GroupBox>
+                <Rectangle x:Name="FonTemButt" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="76" Margin="856,660,0,0"  VerticalAlignment="Top" Width="139" RadiusY="35.283" RadiusX="35.283" PreviewMouseLeftButtonDown="Rectangle_PreviewMouseLeftButtonDown"/>
+                <Rectangle x:Name="TeamButt" Fill="#FF0B0C0F" HorizontalAlignment="Left" Height="68" Margin="861,664,0,0"  VerticalAlignment="Top" Width="69" RadiusY="35.283" RadiusX="35.283"/>
             </Grid>
         </Viewbox>
         <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown" Height="33" VerticalAlignment="Top" >

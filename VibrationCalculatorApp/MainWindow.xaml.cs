@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace VibrationCalculatorApp {
     /// <summary>
@@ -68,6 +69,19 @@ namespace VibrationCalculatorApp {
                 this.Top = 0;
             }
             DragMove();
+        }
+
+        private void Rectangle_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+
+            ThicknessAnimation teamAnimation = new ThicknessAnimation();
+            teamAnimation.From = TeamButt.Margin;
+            teamAnimation.To = new Thickness(
+                TeamButt.Margin.Left + FonTemButt.Width/2-10,
+                TeamButt.Margin.Top,
+                TeamButt.Margin.Right,
+                TeamButt.Margin.Bottom);
+            teamAnimation.Duration = TimeSpan.FromMilliseconds(500);
+            TeamButt.BeginAnimation(Rectangle.MarginProperty, teamAnimation);
         }
     }
 }
