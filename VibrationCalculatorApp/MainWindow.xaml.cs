@@ -80,13 +80,14 @@ namespace VibrationCalculatorApp {
             ThicknessAnimation teamAnimation = new ThicknessAnimation();
             teamAnimation.From = TeamButt.Margin;
             double newMarginLeft = 0;
-            double newMarginRight = 0;
+            string themeName = "Dark.xaml";
             if (AppViewModel.Themes == Themes.Black) {
                 newMarginLeft = TeamButt.Margin.Left + FonTemButt.ActualWidth - (FonTemButt.ActualHeight - TeamButt.ActualHeight) - TeamButt.ActualWidth;
-                newMarginRight = newMarginLeft + TeamButt.ActualWidth;
+                themeName = "Light.xaml";
             }
             if (AppViewModel.Themes == Themes.Light) {
                 newMarginLeft = TeamButt.Margin.Left - FonTemButt.ActualWidth + (FonTemButt.ActualHeight - TeamButt.ActualHeight) + TeamButt.ActualWidth;
+                themeName = "Dark.xaml";
             }
             teamAnimation.To = new Thickness(
                 newMarginLeft,
@@ -96,6 +97,10 @@ namespace VibrationCalculatorApp {
             teamAnimation.Duration = TimeSpan.FromMilliseconds(500);
             TeamButt.BeginAnimation(Rectangle.MarginProperty, teamAnimation);
             AppViewModel.ChangeTheme();
+            var uri = new Uri(themeName, UriKind.Relative);
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
     }
 }
