@@ -86,4 +86,10 @@
     <Style x:Key="ThemeButton" TargetType="Rectangle">
         <Setter Property="Fill" Value="#FF15171E"/>
     </Style>
+    <Style x:Key="MainBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#FF1D1F29"/>
+    </Style>
+    <Style x:Key="Button" TargetType="Button">
+        <Setter Property="Foreground" Value="#7FF5F2F2"/>
+    </Style>
 </ResourceDictionary>

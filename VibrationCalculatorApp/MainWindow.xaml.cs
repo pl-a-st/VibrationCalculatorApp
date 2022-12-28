@@ -78,6 +78,7 @@ namespace VibrationCalculatorApp {
 
         private void Grid_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e) {
             ThicknessAnimation teamAnimation = new ThicknessAnimation();
+            
             teamAnimation.From = TeamButt.Margin;
             double newMarginLeft = 0;
             string themeName = "Dark.xaml";

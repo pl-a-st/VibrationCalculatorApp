@@ -4,7 +4,7 @@
         <Setter Property="CornerRadius" Value="10"/>
     </Style>
     <Style x:Key="BlackGroupBox" TargetType="GroupBox">
-        <Setter Property="Background" Value="#B6CFD8"/>
+        <Setter Property="Background" Value="#E5E6E8"/>
         <Setter Property="BorderThickness" Value="5"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -13,7 +13,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GroupBox}">
                     <Grid SnapsToDevicePixels="True">
-                        <Border BorderBrush="#626E73" BorderThickness="1" Background="{TemplateBinding Background}" Grid.ColumnSpan="10" Grid.Column="0" CornerRadius="3" Grid.Row="1" Grid.RowSpan="3"/>
+                        <Border BorderBrush="#B3B8C2" BorderThickness="1" Background="{TemplateBinding Background}" Grid.ColumnSpan="10" Grid.Column="0" CornerRadius="3" Grid.Row="1" Grid.RowSpan="3"/>
                         <Border BorderBrush="Black" BorderThickness="{TemplateBinding BorderThickness}" Grid.ColumnSpan="4" CornerRadius="0" Grid.Row="1" Grid.RowSpan="3">
                             <Border.OpacityMask>
                                 <MultiBinding ConverterParameter="7" UpdateSourceTrigger="Default">
@@ -45,15 +45,15 @@
     <Style x:Key="TextBoxForBlack" TargetType="TextBox">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Height" Value="40"/>
-        <Setter Property="Background" Value="#E0EAEE"/>
-        <Setter Property="BorderBrush" Value="#626E73"/>
+        <Setter Property="Background" Value="#F4F6F7"/>
+        <Setter Property="BorderBrush" Value="#A3A7AE"/>
         <Setter Property="Foreground" Value="#2B2A29"/>
         <Setter Property="Padding"  Value="10,5,5,5"/>
         <Setter Property="Text" Value=""/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border" CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1.1" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                    <Border x:Name="border" CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -74,17 +74,26 @@
     </Style>
     <Style x:Key="RadioForBlack" TargetType="RadioButton">
         <Setter Property="Foreground" Value="#1F1D1A"/>
+        <Setter Property="Background" Value="#F0F8FF"/>
+        
     </Style>
     <Style x:Key="ViewboxForAll" TargetType="Viewbox">
         <Setter Property="Height" Value="25"/>
     </Style>
     <Style x:Key="Grid" TargetType="Grid">
-        <Setter Property="Background" Value="#C7DEE8"/>
+        <Setter Property="Background" Value="White"/>
+       
     </Style>
     <Style x:Key="FonThemeButton" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#FFE4E4EA"/>
+        <Setter Property="Fill" Value="#2B2A29"/>
     </Style>
     <Style x:Key="ThemeButton" TargetType="Rectangle">
-        <Setter Property="Fill" Value="#FF15171E"/>
+        <Setter Property="Fill" Value="White"/>
+    </Style>
+    <Style x:Key="MainBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#B3B8C2"/>
+    </Style>
+    <Style x:Key="Button" TargetType="Button">
+        <Setter Property="Foreground" Value="#2B2A29"/>
     </Style>
 </ResourceDictionary>
