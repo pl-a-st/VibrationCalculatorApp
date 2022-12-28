@@ -80,6 +80,10 @@
     <Style x:Key="Grid" TargetType="Grid">
         <Setter Property="Background" Value="#FF15171E"/>
     </Style>
-
-
+    <Style x:Key="FonThemeButton" TargetType="Rectangle">
+        <Setter Property="Fill" Value="#FFE4E4EA"/>
+    </Style>
+    <Style x:Key="ThemeButton" TargetType="Rectangle">
+        <Setter Property="Fill" Value="#FF15171E"/>
+    </Style>
 </ResourceDictionary>

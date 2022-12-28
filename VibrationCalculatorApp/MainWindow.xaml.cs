@@ -40,23 +40,19 @@ namespace VibrationCalculatorApp {
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-           
+
         }
 
         private void GroupBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-           
+
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-          
+
         }
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-           
-        }
 
-        private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-           
         }
 
         private void Grid_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e) {
@@ -64,7 +60,7 @@ namespace VibrationCalculatorApp {
         }
 
         private void Grid_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e) {
-            if(this.WindowState == WindowState.Maximized) {
+            if (this.WindowState == WindowState.Maximized) {
                 this.WindowState = WindowState.Normal;
                 this.Top = 0;
             }
@@ -73,15 +69,33 @@ namespace VibrationCalculatorApp {
 
         private void Rectangle_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
 
+
+        }
+
+        private void Grid_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e) {
+
+        }
+
+        private void Grid_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e) {
             ThicknessAnimation teamAnimation = new ThicknessAnimation();
             teamAnimation.From = TeamButt.Margin;
+            double newMarginLeft = 0;
+            double newMarginRight = 0;
+            if (AppViewModel.Themes == Themes.Black) {
+                newMarginLeft = TeamButt.Margin.Left + FonTemButt.ActualWidth - (FonTemButt.ActualHeight - TeamButt.ActualHeight) - TeamButt.ActualWidth;
+                newMarginRight = newMarginLeft + TeamButt.ActualWidth;
+            }
+            if (AppViewModel.Themes == Themes.Light) {
+                newMarginLeft = TeamButt.Margin.Left - FonTemButt.ActualWidth + (FonTemButt.ActualHeight - TeamButt.ActualHeight) + TeamButt.ActualWidth;
+            }
             teamAnimation.To = new Thickness(
-                TeamButt.Margin.Left + FonTemButt.Width/2-10,
+                newMarginLeft,
                 TeamButt.Margin.Top,
                 TeamButt.Margin.Right,
                 TeamButt.Margin.Bottom);
             teamAnimation.Duration = TimeSpan.FromMilliseconds(500);
             TeamButt.BeginAnimation(Rectangle.MarginProperty, teamAnimation);
+            AppViewModel.ChangeTheme();
         }
     }
 }

@@ -140,35 +140,39 @@
                 <Image HorizontalAlignment="Left" Height="68" Margin="502,9,0,0" VerticalAlignment="Top" Width="61" Source="2.png" Stretch="Fill" RenderTransformOrigin="-0.332,0.682"/>
                 <Label Style="{DynamicResource LableForBlack}" Content="Calc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="568,26,0,0" FontSize="36" FontFamily="Arial"/>
                 <Label Style="{DynamicResource LableForBlack}" Content="Vibro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="404,26,0,0" FontSize="36" FontFamily="Arial"/>
-                <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF1D1F29" BorderBrush="{x:Null}" UseLayoutRounding="False" Width="314" Height="351.188" Margin="707.166,293,0,0">
+                <GroupBox Style="{StaticResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF1D1F29" BorderBrush="{x:Null}" UseLayoutRounding="False" Margin="707.166,293,17.834,24">
                     <Grid>
                         <Label Style="{DynamicResource LableForBlack}" Content="Автоспектры" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,4,0,0"/>
-                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity9" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,58,0,0"/>
-                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy6" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,103,0,0"/>
-                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="Fгр, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,61,0,0"/>
-                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="N, линий" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,103,0,0"/>
-                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy7" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,148,0,0"/>
-                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="∆F, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,148,0,0"/>
-                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="Ближайшие центры каналов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,201,0,0"/>
-                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity9_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,240,0,0"/>
-                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy8" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,285,0,0"/>
-                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="F1, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,243,0,0"/>
-                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="F2, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,285,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity9" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,54,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy6" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,122,0,0" RenderTransformOrigin="0.522,-0.603"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="Fгр, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,57,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="N, линий" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,122,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy7" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,191,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="∆F, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,191,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="Ближайшие центры каналов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,260,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity9_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,313,0,0"/>
+                        <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy8" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,375,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="F1, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,316,0,0"/>
+                        <Label Style="{DynamicResource LableForBlack}" Foreground="#B3B3B3" Content="F2, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,375,0,0"/>
 
                     </Grid>
                 </GroupBox>
-                <Rectangle x:Name="FonTemButt" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="76" Margin="856,660,0,0"  VerticalAlignment="Top" Width="139" RadiusY="35.283" RadiusX="35.283" PreviewMouseLeftButtonDown="Rectangle_PreviewMouseLeftButtonDown"/>
-                <Rectangle x:Name="TeamButt" Fill="#FF0B0C0F" HorizontalAlignment="Left" Height="68" Margin="861,664,0,0"  VerticalAlignment="Top" Width="69" RadiusY="35.283" RadiusX="35.283"/>
             </Grid>
         </Viewbox>
-        <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown" Height="33" VerticalAlignment="Top" >
+        <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" Height="33" VerticalAlignment="Top" >
             <Grid HorizontalAlignment="Right" Width="43" Height="35" VerticalAlignment="Top">
                 <Button x:Name="BtnClose" Content="✕" HorizontalAlignment="Left" VerticalAlignment="Top" Width="28" Margin="5,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#7FF5F2F2" FontSize="20" Height="27" Padding="1,-1,1,0" Click="BtnClose_Click" FontWeight="Bold"/>
             </Grid>
-            <Grid Height="40" VerticalAlignment="Top" MouseLeftButtonDown="Grid_MouseLeftButtonDown_1" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown_1" Margin="0,0,96,-7">
+            <Grid Height="40" VerticalAlignment="Top" MouseLeftButtonDown="Grid_MouseLeftButtonDown_1" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown_1" Margin="0,0,142,-7">
                 <Rectangle Height="40" VerticalAlignment="Top" Fill="#00000000" Margin="-4,0,0,0"/>
             </Grid>
             <Button x:Name="BtnMinimizate" Content="─" Margin="0,0,54,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#7FF5F2F2" FontSize="24" Padding="1,-5,1,0" Click="BtnMinimizate_Click" FontWeight="Bold" HorizontalAlignment="Right" Width="28" Height="26" VerticalAlignment="Top"/>
+            <Viewbox Margin="0,4,99,0" HorizontalAlignment="Right" Width="38" Height="22" VerticalAlignment="Top">
+                <Grid Height="77" Width="142" PreviewMouseRightButtonDown="Grid_PreviewMouseRightButtonDown" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown_2">
+                    <Rectangle x:Name="FonTemButt" Style="{DynamicResource FonThemeButton}" Margin="0,0,3,1" RadiusY="35.283" RadiusX="35.283" PreviewMouseLeftButtonDown="Rectangle_PreviewMouseLeftButtonDown"/>
+                    <Rectangle x:Name="TeamButt" Style="{DynamicResource ThemeButton}" Margin="4,4,0,0" RadiusY="35.283" RadiusX="35.283" Height="68" VerticalAlignment="Top" HorizontalAlignment="Left" Width="69"/>
+                </Grid>
+            </Viewbox>
         </Grid>
     </Grid>
 </Window>
