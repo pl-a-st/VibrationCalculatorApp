@@ -83,11 +83,11 @@ namespace VibrationCalculatorApp {
             double newMarginLeft = 0;
             string themeName = "Dark.xaml";
             if (AppViewModel.Themes == Themes.Black) {
-                newMarginLeft = TeamButt.Margin.Left + FonTemButt.ActualWidth - (FonTemButt.ActualHeight - TeamButt.ActualHeight) - TeamButt.ActualWidth;
+                newMarginLeft = FonTemButt.Margin.Left + FonTemButt.ActualWidth - FonTemButt.ActualHeight +TeamButt.ActualHeight - TeamButt.ActualWidth;
                 themeName = "Light.xaml";
             }
             if (AppViewModel.Themes == Themes.Light) {
-                newMarginLeft = TeamButt.Margin.Left - FonTemButt.ActualWidth + (FonTemButt.ActualHeight - TeamButt.ActualHeight) + TeamButt.ActualWidth;
+                newMarginLeft = FonTemButt.Margin.Left + FonTemButt.ActualHeight - TeamButt.ActualHeight;
                 themeName = "Dark.xaml";
             }
             teamAnimation.To = new Thickness(
