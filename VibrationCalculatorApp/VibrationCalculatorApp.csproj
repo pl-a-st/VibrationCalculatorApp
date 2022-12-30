@@ -182,6 +182,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="VibroMath">
+      <HintPath>..\..\..\VibCalculator\VibroMath\bin\Release\VibroMath.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

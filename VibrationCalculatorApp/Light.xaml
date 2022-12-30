@@ -49,7 +49,6 @@
         <Setter Property="BorderBrush" Value="#A3A7AE"/>
         <Setter Property="Foreground" Value="#2B2A29"/>
         <Setter Property="Padding"  Value="10,5,5,5"/>
-        <Setter Property="Text" Value=""/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">

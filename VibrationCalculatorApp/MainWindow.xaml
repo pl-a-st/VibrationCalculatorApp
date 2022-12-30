@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VibrationCalculatorApp"
         xmlns:controls="VibrationCalculatorApp"
-        mc:Ignorable="d" Height="578.831" Width="794.196" ResizeMode="CanResizeWithGrip" WindowStyle="None" Background="#FFDBDDE4" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
+        mc:Ignorable="d" Height="625.906" Width="866.196" ResizeMode="CanResizeWithGrip" WindowStyle="None" Background="#FFDBDDE4" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
     <Window.Resources>
 
     </Window.Resources>
@@ -17,9 +17,9 @@
                     <Grid HorizontalAlignment="Left" Height="651" VerticalAlignment="Top" Width="1051" Margin="-4,85,0,0">
                         <Grid HorizontalAlignment="Left" Height="212" VerticalAlignment="Top" Width="322" Margin="22,0,0,0">
                             <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="179" VerticalAlignment="Top" Width="325" BorderBrush="{x:Null}" Margin="0,10,-13,0" UseLayoutRounding="False">
-                                <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="302">
+                                <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="334" Margin="0,0,-9,0">
                                     <Label Style="{DynamicResource LableForBlack}" Content="КП датчика" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,6,0,0"/>
-                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" TextChanged="TSensitivity_TextChanged" Margin="20,48,0,0"/>
+                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="282" TextChanged="TSensitivity_TextChanged" Margin="20,48,0,0"/>
                                     <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="127" Margin="29,104,0,0">
                                         <RadioButton Style="{DynamicResource RadioForBlack}" Content="мВ/g" GroupName="Sensitivity" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" />
                                     </Viewbox>
