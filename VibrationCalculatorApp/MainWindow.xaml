@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VibrationCalculatorApp"
         xmlns:controls="VibrationCalculatorApp"
+        
         mc:Ignorable="d" Height="625.906" Width="866.196" ResizeMode="CanResizeWithGrip" WindowStyle="None" Background="#FFDBDDE4" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
     <Window.Resources>
-
+        <!--<local:AppViewModel x:Key="AppViewModel"/>-->
     </Window.Resources>
     <Border Style="{DynamicResource MainBorder}" BorderThickness="2">
         <Grid Style="{DynamicResource Grid}" Margin="-1" >
@@ -53,7 +54,7 @@
                             <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="179" VerticalAlignment="Top" Width="314"  BorderBrush="{x:Null}" Margin="0,10,10,0" UseLayoutRounding="False">
                                 <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="302">
                                     <Label Style="{DynamicResource LableForBlack}" Content="Напряжение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,6,0,0"/>
-                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="TSensitivity_TextChanged" Margin="16,48,0,0"/>
+                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="TSensitivity_TextChanged" Margin="16,48,0,0" Padding="10,5" UseLayoutRounding="True"/>
                                     <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="74" Margin="27,95,0,0">
                                         <RadioButton Style="{DynamicResource RadioForBlack}" Content="СКЗ" GroupName="VoltParam" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" />
                                     </Viewbox>
@@ -74,15 +75,15 @@
                     <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="{x:Null}" Margin="27.333,292,0,0" UseLayoutRounding="False" Width="659.333" Height="135.667">
                         <Grid HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="659">
                             <Label Style="{DynamicResource LableForBlack}" Content="Ускорение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,5,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TSensitivity_TextChanged" Margin="17,48,0,0"/>
+                            <TextBox Text="{Binding Source={x:Static local:AppViewModel.TAcc}, Mode=OneWay}" Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TSensitivity_TextChanged" Margin="17,48,0,0"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="74" Margin="24,98,0,0">
-                                <RadioButton Style="{DynamicResource RadioForBlack}" Content="СКЗ" GroupName="AccelerationParams" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" />
+                                <RadioButton x:Name="RAccRMS" x:FieldModifier="public" Style="{DynamicResource RadioForBlack}" Content="СКЗ" GroupName="AccelerationParams" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" />
                             </Viewbox>
                             <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="99" Margin="194,98,0,0">
-                                <RadioButton Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="AccelerationParams" Content="Размах" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <RadioButton x:Name="RAccPikPik" x:FieldModifier="public" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="AccelerationParams" Content="Размах" HorizontalAlignment="Left" VerticalAlignment="Top" />
                             </Viewbox>
                             <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="77" Margin="109,98,0,0">
-                                <RadioButton Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="AccelerationParams" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <RadioButton x:Name="RAccPik" x:FieldModifier="public" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="AccelerationParams" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" />
                             </Viewbox>
                             <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TSensitivity2_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" TextChanged="TSensitivity_TextChanged" Margin="361,48,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}"  Content="м/с­­²" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>

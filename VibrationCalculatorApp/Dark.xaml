@@ -73,6 +73,8 @@
     </Style>
     <Style x:Key="RadioForBlack" TargetType="RadioButton">
         <Setter Property="Foreground" Value="#B3B3B3"/>
+        
+        
     </Style>
     <Style x:Key="ViewboxForAll" TargetType="Viewbox">
         <Setter Property="Height" Value="25"/>

@@ -21,6 +21,7 @@ namespace VibrationCalculatorApp {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+            
         }
 
         private void TSensitivity_TextChanged(object sender, TextChangedEventArgs e) {
