@@ -15,6 +15,7 @@ using System.Windows;
 namespace VibrationCalculatorApp {
     public enum Access {
         ForUser,
+        ForProgram,
         Blocked
     }
     [ContentProperty("Text")]
