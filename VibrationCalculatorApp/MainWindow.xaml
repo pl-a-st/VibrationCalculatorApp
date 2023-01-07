@@ -12,6 +12,7 @@
     </Window.Resources>
     <Border Style="{DynamicResource MainBorder}" BorderThickness="2">
         <Grid Style="{DynamicResource Grid}" Margin="-1" >
+            
 
             <Viewbox Margin="0,10,16,0">
                 <Grid Height="760" Width="1039">
