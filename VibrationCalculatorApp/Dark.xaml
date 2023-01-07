@@ -43,18 +43,21 @@
     </Style>
     <Style x:Key="TextBoxForBlack" TargetType="TextBox">
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Height" Value="40"/>
+        <Setter Property="Height" Value="41"/>
         <Setter Property="Background" Value="#FF0B0C0F"/>
         <Setter Property="BorderBrush" Value="Gray"/>
         <Setter Property="Foreground" Value="#B3B3B3"/>
-        <Setter Property="Padding"  Value="10,5,5,5"/>
+        <Setter Property="Padding"  Value="5,5,5,5"/>
+        <Setter Property="CaretBrush" Value="White"/>
         
         <Setter Property="Template">
             <Setter.Value>
+                
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="border" CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1.1" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                     </Border>
+                    
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" TargetName="border" Value="0.56"/>
@@ -69,6 +72,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+       
 
     </Style>
     <Style x:Key="RadioForBlack" TargetType="RadioButton">

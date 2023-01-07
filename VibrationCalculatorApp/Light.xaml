@@ -65,6 +65,7 @@
                         <Trigger Property="IsKeyboardFocused" Value="True">
                             <Setter Property="BorderBrush" TargetName="border" Value="#FF569DE5"/>
                         </Trigger>
+                        
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -83,8 +84,8 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
-                    <GradientStop Color="#F5F5F5" Offset="0"/>
-                    <GradientStop Color="#E4EAF0" Offset="1"/>
+                    <GradientStop Color="#FFE3E9F3" Offset="0"/>
+                    <GradientStop Color="#FFE6E9EC" Offset="0.25"/>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>

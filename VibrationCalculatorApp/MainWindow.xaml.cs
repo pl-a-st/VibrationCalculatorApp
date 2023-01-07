@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using VibroMath;
+using System.Windows.Documents;
 
 namespace VibrationCalculatorApp {
     public enum Pocess {
@@ -32,35 +33,6 @@ namespace VibrationCalculatorApp {
             PushAllTexbox();
         }
 
-        private void TSensitivity_TextChanged(object sender, TextChangedEventArgs e) {
-            if (InitializeComponentStatus == Pocess.Finish && ChangeTextbox == Pocess.Finish) {
-                int selectionStart = TSensitivity.SelectionStart;
-                ChangeTextbox = Pocess.InPocess;
-                SensitivityType sensitivityType = SensitivityType.mV_g;
-                if (RSens_mV_g.IsChecked ?? false) {
-                    sensitivityType = SensitivityType.mV_g;
-                }
-                if (RSens_mV_m_s2.IsChecked ?? false) {
-                    sensitivityType = SensitivityType.mV_mS2;
-                }
-                AppViewModel.SetTSensAndALL(TSensitivity.Text, sensitivityType, TakeFreeze());
-                AppViewModel.TAcc.Access = Access.Blocked;
-                PushAllTexbox();
-                AppViewModel.TAcc.Access = Access.ForUser;
-                try {
-                    if (AppViewModel.TAcc.LastTry == LastTry.Unsuccessful) {
-                        TAcceleration.SelectionStart = selectionStart - 1;
-                    }
-                    else {
-                        TAcceleration.SelectionStart = selectionStart;
-                    }
-                }
-                catch {
-                    TAcceleration.SelectionStart = TAcceleration.Text.Length;
-                }
-                ChangeTextbox = Pocess.Finish;
-            }
-        }
 
         private Freeze TakeFreeze() {
             VibroMath.Freeze freeze = VibroMath.Freeze.Acceleration;
@@ -162,6 +134,35 @@ namespace VibrationCalculatorApp {
                 AppViewModel.TAcc.MagnitudeType = MagnitudeType.RMS;
                 AppViewModel.SetAll();
                 PushAllTexbox();
+            }
+        }
+        private void TSensitivity_TextChanged(object sender, TextChangedEventArgs e) {
+            if (InitializeComponentStatus == Pocess.Finish && ChangeTextbox == Pocess.Finish) {
+                int selectionStart = TSensitivity.SelectionStart;
+                ChangeTextbox = Pocess.InPocess;
+                SensitivityType sensitivityType = SensitivityType.mV_g;
+                if (RSens_mV_g.IsChecked ?? false) {
+                    sensitivityType = SensitivityType.mV_g;
+                }
+                if (RSens_mV_m_s2.IsChecked ?? false) {
+                    sensitivityType = SensitivityType.mV_mS2;
+                }
+                AppViewModel.SetTSensAndALL(TSensitivity.Text, sensitivityType, TakeFreeze());
+                AppViewModel.TSens.Access = Access.Blocked;
+                PushAllTexbox();
+                AppViewModel.TSens.Access = Access.ForUser;
+                try {
+                    if (AppViewModel.TAcc.LastTry == LastTry.Unsuccessful) {
+                        TSensitivity.SelectionStart = selectionStart - 1;
+                    }
+                    else {
+                        TSensitivity.SelectionStart = selectionStart;
+                    }
+                }
+                catch {
+                    TSensitivity.SelectionStart = TSensitivity.Text.Length;
+                }
+                ChangeTextbox = Pocess.Finish;
             }
         }
         private void TAcceleration_TextChanged(object sender, TextChangedEventArgs e) {
@@ -533,5 +534,15 @@ namespace VibrationCalculatorApp {
             }
 
         }
+
+        private async void TSensitivity_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TAcceleration_GotFocus(object s, RoutedEventArgs e) {
+            TAcceleration.Width = TAcceleration.Width;
+            await Application.Current.Dispatcher.InvokeAsync((s as TextBox).SelectAll);
+        }
+        
     }
 }
