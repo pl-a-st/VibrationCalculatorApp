@@ -63,6 +63,16 @@ namespace VibrationCalculatorApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] Round {
+            get {
+                object obj = ResourceManager.GetObject("Round", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] VibroMath {
             get {
                 object obj = ResourceManager.GetObject("VibroMath", resourceCulture);

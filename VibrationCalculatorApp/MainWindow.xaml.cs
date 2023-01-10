@@ -15,11 +15,25 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using VibroMath;
 using System.Windows.Documents;
+using Metrology;
+
 
 namespace VibrationCalculatorApp {
     public enum Pocess {
         InPocess,
         Finish
+    }
+    public enum Parametr {
+        Acceleration,
+        Acceleration_dB,
+        VeloCity,
+        VeloCity_dB,
+        Displacment,
+        Displacment_dB,
+        Voltage,
+        Voltage_dB,
+        Sensitivity,
+        Frequency
     }
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -32,8 +46,6 @@ namespace VibrationCalculatorApp {
             InitializeComponentStatus = Pocess.Finish;
             PushAllTexbox();
         }
-
-
         private Freeze TakeFreeze() {
             VibroMath.Freeze freeze = VibroMath.Freeze.Acceleration;
             if (RFreezAcc.IsChecked ?? false) {
@@ -149,10 +161,10 @@ namespace VibrationCalculatorApp {
                 }
                 AppViewModel.SetTSensAndALL(TSensitivity.Text, sensitivityType, TakeFreeze());
                 AppViewModel.TSens.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Sensitivity);
                 AppViewModel.TSens.Access = Access.ForUser;
                 try {
-                    if (AppViewModel.TAcc.LastTry == LastTry.Unsuccessful) {
+                    if (AppViewModel.TSens.LastTry == LastTry.Unsuccessful) {
                         TSensitivity.SelectionStart = selectionStart - 1;
                     }
                     else {
@@ -173,7 +185,7 @@ namespace VibrationCalculatorApp {
                 magnitudeType = CheckMagnitudeTypeAcc(magnitudeType, RAccRMS, RAccPik, RAccPikPik);
                 AppViewModel.SetTAccAndALL(TAcceleration.Text, magnitudeType);
                 AppViewModel.TAcc.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Acceleration);
                 AppViewModel.TAcc.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TAcc.LastTry == LastTry.Unsuccessful) {
@@ -195,7 +207,7 @@ namespace VibrationCalculatorApp {
                 ChangeTextbox = Pocess.InPocess;
                 AppViewModel.SetTAcc_dBAndALL(TAcceleration_dB.Text);
                 AppViewModel.TAcc_dB.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Acceleration_dB);
                 AppViewModel.TAcc_dB.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TAcc_dB.LastTry == LastTry.Unsuccessful) {
@@ -234,20 +246,8 @@ namespace VibrationCalculatorApp {
                 PushAllTexbox();
             }
         }
-        private void PushAllTexbox() {
-            if (InitializeComponentStatus == Pocess.Finish) {
-                TAcceleration.Text = AppViewModel.TAcc.Text;
-                TSensitivity.Text = AppViewModel.TSens.Text;
-                TFrequency.Text = AppViewModel.TFreq.Text;
-                TAcceleration_dB.Text = AppViewModel.TAcc_dB.Text;
-                TVelocity.Text = AppViewModel.TVel.Text;
-                TVelocity_dB.Text = AppViewModel.TVel_dB.Text;
-                TDisplasment.Text = AppViewModel.TDis.Text;
-                TDisplasment_dB.Text = AppViewModel.TDis_dB.Text;
-                TVoltage.Text = AppViewModel.TVolt.Text;
-                TVoltage_dB.Text = AppViewModel.TVolt_dB.Text;
-            }
-
+        private void GetRound(DoubleForTextBox parameter, TextBox textBox) {
+            textBox.Text = MetrologyRound.GetRounded(double.Parse(parameter.Text), countMainChars: 4).ToString();
         }
 
         private void TVelocity_TextChanged(object sender, TextChangedEventArgs e) {
@@ -258,7 +258,7 @@ namespace VibrationCalculatorApp {
                 magnitudeType = CheckMagnitudeTypeAcc(magnitudeType, RVelRMS, RVelPik, RVelPikPik);
                 AppViewModel.SetTVelAndALL(TVelocity.Text, magnitudeType);
                 AppViewModel.TVel.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.VeloCity);
                 AppViewModel.TVel.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TVel.LastTry == LastTry.Unsuccessful) {
@@ -283,7 +283,7 @@ namespace VibrationCalculatorApp {
                 magnitudeType = CheckMagnitudeTypeAcc(magnitudeType, RDisRMS, RDisPik, RDisPikPik);
                 AppViewModel.SetTDisAndALL(TDisplasment.Text, magnitudeType);
                 AppViewModel.TDis.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Displacment);
                 AppViewModel.TDis.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TDis.LastTry == LastTry.Unsuccessful) {
@@ -305,7 +305,7 @@ namespace VibrationCalculatorApp {
                 ChangeTextbox = Pocess.InPocess;
                 AppViewModel.SetTVel_dBAndALL(TVelocity_dB.Text);
                 AppViewModel.TVel_dB.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.VeloCity_dB);
                 AppViewModel.TVel_dB.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TVel_dB.LastTry == LastTry.Unsuccessful) {
@@ -328,7 +328,7 @@ namespace VibrationCalculatorApp {
                 ChangeTextbox = Pocess.InPocess;
                 AppViewModel.SetTDis_dBAndALL(TDisplasment_dB.Text);
                 AppViewModel.TDis_dB.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Displacment_dB);
                 AppViewModel.TDis_dB.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TDis_dB.LastTry == LastTry.Unsuccessful) {
@@ -353,7 +353,7 @@ namespace VibrationCalculatorApp {
                 magnitudeType = CheckMagnitudeTypeAcc(magnitudeType, RVoltRMS, RVoltPik, RVoltPikPik);
                 AppViewModel.SetTVoltAndALL(TVoltage.Text, magnitudeType);
                 AppViewModel.TVolt.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Voltage);
                 AppViewModel.TVolt.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TVolt.LastTry == LastTry.Unsuccessful) {
@@ -376,7 +376,7 @@ namespace VibrationCalculatorApp {
                 ChangeTextbox = Pocess.InPocess;
                 AppViewModel.SetTVolt_dBAndALL(TVoltage_dB.Text);
                 AppViewModel.TVolt_dB.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Voltage_dB);
                 AppViewModel.TVolt_dB.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TVolt_dB.LastTry == LastTry.Unsuccessful) {
@@ -500,7 +500,7 @@ namespace VibrationCalculatorApp {
                 }
                 AppViewModel.SetTFreqAndALL(TFrequency.Text, frequencyType, TakeFreeze());
                 AppViewModel.TFreq.Access = Access.Blocked;
-                PushAllTexbox();
+                PushAllTexbox(Parametr.Frequency);
                 AppViewModel.TFreq.Access = Access.ForUser;
                 try {
                     if (AppViewModel.TFreq.LastTry == LastTry.Unsuccessful) {
@@ -535,14 +535,96 @@ namespace VibrationCalculatorApp {
 
         }
 
+        private void PushAllTexbox() {
+            if (InitializeComponentStatus == Pocess.Finish) {
+                GetRound(AppViewModel.TAcc, TAcceleration);
+                GetRound(AppViewModel.TSens, TSensitivity);
+                GetRound(AppViewModel.TFreq, TFrequency);
+                GetRound(AppViewModel.TAcc_dB, TAcceleration_dB);
+                GetRound(AppViewModel.TVel, TVelocity);
+                GetRound(AppViewModel.TVel_dB, TVelocity_dB);
+                GetRound(AppViewModel.TDis, TDisplasment);
+                GetRound(AppViewModel.TDis_dB, TDisplasment_dB);
+                GetRound(AppViewModel.TVolt, TVoltage);
+                GetRound(AppViewModel.TVolt_dB, TVoltage_dB);
+            }
+        }
+        private void PushAllTexbox(Parametr param) {
+            if (InitializeComponentStatus == Pocess.Finish) {
+                if (param == Parametr.Acceleration) {
+                    TAcceleration.Text = AppViewModel.TAcc.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TAcc, TAcceleration);
+                }
+                if (param == Parametr.Acceleration_dB) {
+                    TAcceleration_dB.Text = AppViewModel.TAcc_dB.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TAcc_dB, TAcceleration_dB);
+                }
+                if (param == Parametr.Acceleration_dB) {
+                    TAcceleration_dB.Text = AppViewModel.TAcc_dB.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TAcc_dB, TAcceleration_dB);
+                }
+                if (param == Parametr.Sensitivity) {
+                    TSensitivity.Text = AppViewModel.TSens.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TSens, TSensitivity);
+                }
+                if (param == Parametr.Frequency) {
+                    TFrequency.Text = AppViewModel.TFreq.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TFreq, TFrequency);
+                }
+                if (param == Parametr.VeloCity) {
+                    TVelocity.Text = AppViewModel.TVel.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TVel, TVelocity);
+                }
+                if (param == Parametr.VeloCity_dB) {
+                    TVelocity_dB.Text = AppViewModel.TVel_dB.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TVel_dB, TVelocity_dB);
+                }
+                if (param == Parametr.Displacment) {
+                    TDisplasment.Text = AppViewModel.TDis.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TDis, TDisplasment);
+                }
+                if (param == Parametr.Displacment_dB) {
+                    TDisplasment_dB.Text = AppViewModel.TDis_dB.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TDis_dB, TDisplasment_dB);
+                }
+                if (param == Parametr.Voltage) {
+                    TVoltage.Text = AppViewModel.TVolt.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TVolt, TVoltage);
+                }
+                if (param == Parametr.Voltage_dB) {
+                    TVoltage_dB.Text = AppViewModel.TVolt_dB.Text;
+                }
+                else {
+                    GetRound(AppViewModel.TVolt_dB, TVoltage_dB);
+                }
+            }
+        }
+
         private async void TSensitivity_GotFocus(object sender, RoutedEventArgs e) {
             await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
         }
-
         private async void TAcceleration_GotFocus(object s, RoutedEventArgs e) {
-            TAcceleration.Width = TAcceleration.Width;
             await Application.Current.Dispatcher.InvokeAsync((s as TextBox).SelectAll);
         }
-        
     }
 }
