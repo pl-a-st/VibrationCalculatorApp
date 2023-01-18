@@ -114,9 +114,9 @@ namespace VibrationCalculatorApp {
         }
 
         private void Grid_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e) {
-            ThicknessAnimation teamAnimation = new ThicknessAnimation();
+            ThicknessAnimation themeAnimation = new ThicknessAnimation();
 
-            teamAnimation.From = TeamButt.Margin;
+            themeAnimation.From = TeamButt.Margin;
             double newMarginLeft = 0;
             string themeName = "Dark.xaml";
             if (AppViewModel.Themes == Themes.Black) {
@@ -127,13 +127,13 @@ namespace VibrationCalculatorApp {
                 newMarginLeft = FonTemButt.Margin.Left + FonTemButt.ActualHeight - TeamButt.ActualHeight;
                 themeName = "Dark.xaml";
             }
-            teamAnimation.To = new Thickness(
+            themeAnimation.To = new Thickness(
                 newMarginLeft,
                 TeamButt.Margin.Top,
                 TeamButt.Margin.Right,
                 TeamButt.Margin.Bottom);
-            teamAnimation.Duration = TimeSpan.FromMilliseconds(500);
-            TeamButt.BeginAnimation(Rectangle.MarginProperty, teamAnimation);
+            themeAnimation.Duration = TimeSpan.FromMilliseconds(500);
+            TeamButt.BeginAnimation(Rectangle.MarginProperty, themeAnimation);
             AppViewModel.ChangeTheme();
             var uri = new Uri(themeName, UriKind.Relative);
             ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
@@ -474,6 +474,10 @@ namespace VibrationCalculatorApp {
         }
         private void RSens_mV_g_Checked(object sender, RoutedEventArgs e) {
             if (InitializeComponentStatus == Pocess.Finish) {
+                GBDis.Visibility = Visibility.Visible;
+                GBVel.Visibility = Visibility.Visible;
+                LVel.Content = "Скорость";
+                LAcc.Content = "Ускорение";
                 AppViewModel.TSens.SensitivityType = SensitivityType.mV_g;
                 AppViewModel.SetAll();
                 PushAllTexbox();
@@ -481,6 +485,10 @@ namespace VibrationCalculatorApp {
         }
         private void RSens_mV_m_s2_Checked(object sender, RoutedEventArgs e) {
             if (InitializeComponentStatus == Pocess.Finish) {
+                GBDis.Visibility = Visibility.Visible;
+                GBVel.Visibility = Visibility.Visible;
+                LVel.Content = "Скорость";
+                LAcc.Content = "Ускорение";
                 AppViewModel.TSens.SensitivityType = SensitivityType.mV_mS2;
                 AppViewModel.SetAll();
                 PushAllTexbox();
@@ -625,6 +633,27 @@ namespace VibrationCalculatorApp {
         }
         private async void TAcceleration_GotFocus(object s, RoutedEventArgs e) {
             await Application.Current.Dispatcher.InvokeAsync((s as TextBox).SelectAll);
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void RSens_mV_mm_s_Checked(object sender, RoutedEventArgs e) {
+            GBDis.Visibility = Visibility.Hidden;
+            GBVel.Visibility = Visibility.Visible;
+            LVel.Content = "Перемещение";
+            LAcc.Content = "Скорость";
+        }
+
+        private void RSens_mV_mkm_Checked(object sender, RoutedEventArgs e) {
+            GBDis.Visibility = Visibility.Hidden;
+            GBVel.Visibility = Visibility.Hidden;
+            LAcc.Content = "Перемещение";
+        }
+
+        private void TBoundaryFreq_TextChanged(object sender, TextChangedEventArgs e) {
+
         }
     }
 }

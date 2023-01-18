@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\VibrationCalculatorApp.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -256,10 +257,10 @@
     <Resource Include="2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\VibroMath.dll" />
+    <None Include="Resources\Round.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Round.dll" />
+    <None Include="Resources\VibroMath.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />

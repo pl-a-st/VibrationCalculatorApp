@@ -24,7 +24,7 @@ namespace VibrationCalculatorApp {
         Successfully,
         Unsuccessful
     }
-    public abstract class DoubleForTextBox {
+    public class DoubleForTextBox {
         public string Text {
             get;
             private set;
@@ -106,6 +106,9 @@ namespace VibrationCalculatorApp {
             get;
             private set;
         } = new Parameters();
+        public static DoubleForTextBox TBoundaryFrequency = new DoubleForTextBox();
+        public static DoubleForTextBox TLineCount = new DoubleForTextBox();
+
 
         static AppViewModel() {
             SetAll();
