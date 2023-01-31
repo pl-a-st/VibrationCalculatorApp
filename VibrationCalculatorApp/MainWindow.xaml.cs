@@ -524,7 +524,6 @@ namespace VibrationCalculatorApp {
                 ChangeTextbox = Pocess.Finish;
             }
         }
-
         private void RFreqHz_Checked(object sender, RoutedEventArgs e) {
             if (InitializeComponentStatus == Pocess.Finish) {
                 AppViewModel.TFreq.FrequencyType = FrequencyType.Hz;
@@ -532,7 +531,6 @@ namespace VibrationCalculatorApp {
                 PushAllTexbox();
             }
         }
-
         private void RFreqRPM_Checked(object sender, RoutedEventArgs e) {
 
             if (InitializeComponentStatus == Pocess.Finish) {
@@ -542,7 +540,6 @@ namespace VibrationCalculatorApp {
             }
 
         }
-
         private void PushAllTexbox() {
             if (InitializeComponentStatus == Pocess.Finish) {
                 GetRound(AppViewModel.TAcc, TAcceleration);

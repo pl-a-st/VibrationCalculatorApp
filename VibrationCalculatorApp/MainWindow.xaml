@@ -146,9 +146,9 @@
                         <Grid HorizontalAlignment="Left" Height="212" VerticalAlignment="Top" Width="315" Margin="376,0,0,0"/>
                         <Grid HorizontalAlignment="Left" Height="197" VerticalAlignment="Top" Width="342" Margin="685,0,0,0"/>
                     </Grid>
-                    <Image HorizontalAlignment="Left" Height="68" Margin="502,2,0,0" VerticalAlignment="Top" Width="61" Source="2.png" Stretch="Fill" RenderTransformOrigin="-0.332,0.682"/>
-                    <Label Style="{DynamicResource LableForBlack}" Content="Calc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="568,19,0,0" FontSize="36" FontFamily="Arial"/>
-                    <Label Style="{DynamicResource LableForBlack}" Content="Vibro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="404,19,0,0" FontSize="36" FontFamily="Arial"/>
+                    <Image HorizontalAlignment="Left" Height="68" Margin="502,12,0,0" VerticalAlignment="Top" Width="61" Source="2.png" Stretch="Fill" RenderTransformOrigin="-0.332,0.682"/>
+                    <Label Style="{DynamicResource LableForBlack}" Content="Calc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="568,29,0,0" FontSize="36" FontFamily="Arial"/>
+                    <Label Style="{DynamicResource LableForBlack}" Content="Vibro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="404,29,0,0" FontSize="36" FontFamily="Arial"/>
                     <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="{x:Null}" UseLayoutRounding="False" Margin="707.166,293,0,0" Width="314" Height="443">
                         <Grid>
                             <Label Style="{DynamicResource LableForBlack}" Content="Автоспектры" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,4,0,0"/>
