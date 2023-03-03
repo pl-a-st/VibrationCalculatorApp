@@ -14,7 +14,7 @@
         <Grid Style="{DynamicResource Grid}" Margin="-1" >
 
 
-            <Viewbox Margin="0,0,-2,0">
+            <Viewbox Margin="0,0,-2,0" RenderTransformOrigin="0.539,0.509">
                 <Grid Height="774" Width="1046">
                     <Grid HorizontalAlignment="Left" Height="651" VerticalAlignment="Top" Width="1051" Margin="-4,85,0,0">
                         <Grid HorizontalAlignment="Left" Height="212" VerticalAlignment="Top" Width="322" Margin="22,0,0,0">
