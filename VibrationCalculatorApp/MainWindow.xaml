@@ -152,15 +152,15 @@
                     <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="{x:Null}" UseLayoutRounding="False" Margin="707.166,293,0,0" Width="314" Height="443">
                         <Grid>
                             <Label Style="{DynamicResource LableForBlack}" Content="Автоспектры" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,4,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TBoundaryFreq" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TBoundaryFreq_TextChanged" Margin="109,54,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TLineCount" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,122,0,0" RenderTransformOrigin="0.522,-0.603"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TBoundaryFreq" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TBoundaryFreq_TextChanged" Margin="109,54,0,0" Text="1600"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TLineCount" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,122,0,0" RenderTransformOrigin="0.522,-0.603" TextChanged="TLineCount_TextChanged" Text="1600"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="Fгр, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,57,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="N, линий" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,122,0,0"/>
                             <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TDivisionFreq" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,191,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="∆F, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,191,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="Ближайшие центры каналов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,260,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TSensitivity9_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,313,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TSensitivity2_Copy8" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,375,0,0"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TFerstFreqCenterChannel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,313,0,0"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TSecondFreqCenterChannel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,375,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="F1, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,316,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="F2, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,375,0,0"/>
 

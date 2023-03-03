@@ -552,6 +552,7 @@ namespace VibrationCalculatorApp {
                 GetRound(AppViewModel.TDis_dB, TDisplasment_dB);
                 GetRound(AppViewModel.TVolt, TVoltage);
                 GetRound(AppViewModel.TVolt_dB, TVoltage_dB);
+                SetSpectrumParameters();
             }
         }
         private void PushAllTexbox(Parametr param) {
@@ -622,7 +623,20 @@ namespace VibrationCalculatorApp {
                 else {
                     GetRound(AppViewModel.TVolt_dB, TVoltage_dB);
                 }
+                SetSpectrumParameters();
             }
+        }
+
+        private void SetSpectrumParameters() {
+            _ = double.TryParse(TBoundaryFreq.Text, out double boundaryFreq);
+            _ = double.TryParse(TLineCount.Text, out double lineCount);
+            double divisionFreq = boundaryFreq / lineCount;
+            TDivisionFreq.Text = (divisionFreq).ToString();
+            double lineNum = VibroCalc.Frequency.Get_Hz() / (boundaryFreq / lineCount);
+            int minLineNum = (int)Math.Floor(lineNum);
+            int maxLineNum = minLineNum + 1;
+            TFerstFreqCenterChannel.Text = (minLineNum* divisionFreq).ToString();
+            TSecondFreqCenterChannel.Text = (maxLineNum * divisionFreq).ToString();
         }
 
         private async void TSensitivity_GotFocus(object sender, RoutedEventArgs e) {
@@ -650,7 +664,21 @@ namespace VibrationCalculatorApp {
         }
 
         private void TBoundaryFreq_TextChanged(object sender, TextChangedEventArgs e) {
+            if (InitializeComponentStatus == Pocess.Finish && ChangeTextbox == Pocess.Finish) {
+                int selectionStart = TFrequency.SelectionStart;
+                ChangeTextbox = Pocess.InPocess;
+                PushAllTexbox();
+                ChangeTextbox = Pocess.Finish;
+            }
+        }
 
+        private void TLineCount_TextChanged(object sender, TextChangedEventArgs e) {
+            if (InitializeComponentStatus == Pocess.Finish && ChangeTextbox == Pocess.Finish) {
+                int selectionStart = TFrequency.SelectionStart;
+                ChangeTextbox = Pocess.InPocess;
+                PushAllTexbox();
+                ChangeTextbox = Pocess.Finish;
+            }
         }
     }
 }
