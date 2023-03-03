@@ -635,7 +635,7 @@ namespace VibrationCalculatorApp {
             double lineNum = VibroCalc.Frequency.Get_Hz() / (boundaryFreq / lineCount);
             int minLineNum = (int)Math.Floor(lineNum);
             int maxLineNum = minLineNum + 1;
-            TFerstFreqCenterChannel.Text = (minLineNum* divisionFreq).ToString();
+            TFerstFreqCenterChannel.Text = (minLineNum * divisionFreq).ToString();
             TSecondFreqCenterChannel.Text = (maxLineNum * divisionFreq).ToString();
         }
 
@@ -679,6 +679,58 @@ namespace VibrationCalculatorApp {
                 PushAllTexbox();
                 ChangeTextbox = Pocess.Finish;
             }
+        }
+
+        private async void TFrequency_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TVoltage_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TVoltage_dB_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TAcceleration_dB_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TBoundaryFreq_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TVelocity_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TVelocity_dB_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TDivisionFreq_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TDisplasment_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TDisplasment_dB_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TFerstFreqCenterChannel_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TSecondFreqCenterChannel_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
+        }
+
+        private async void TLineCount_GotFocus(object sender, RoutedEventArgs e) {
+            await Application.Current.Dispatcher.InvokeAsync((sender as TextBox).SelectAll);
         }
     }
 }

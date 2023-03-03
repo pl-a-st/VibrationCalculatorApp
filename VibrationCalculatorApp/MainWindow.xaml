@@ -41,7 +41,7 @@
                             <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="179" VerticalAlignment="Top" Width="314"  BorderBrush="{x:Null}" Margin="0,10,0,0" UseLayoutRounding="False" MouseLeftButtonDown="GroupBox_MouseLeftButtonDown">
                                 <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="302">
                                     <Label Style="{DynamicResource LableForBlack}" Content="Частота" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,7,0,0"/>
-                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TFrequency" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Width="282" Margin="18,48,0,0" TextChanged="TFrequency_TextChanged"/>
+                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TFrequency" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Width="282" Margin="18,48,0,0" TextChanged="TFrequency_TextChanged" GotFocus="TFrequency_GotFocus"/>
                                     <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="127" Margin="54,120,0,0">
                                         <RadioButton x:Name="RFreqHz" Style="{DynamicResource RadioForBlack}" Content="Гц" GroupName="Frequency" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="RFreqHz_Checked"/>
                                     </Viewbox>
@@ -55,7 +55,7 @@
                             <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Right" Height="179" VerticalAlignment="Top" Width="314"  BorderBrush="{x:Null}" Margin="0,10,10,0" UseLayoutRounding="False">
                                 <Grid HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="314">
                                     <Label Style="{DynamicResource LableForBlack}" Content="Напряжение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,6,0,0"/>
-                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVoltage" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="TVoltage_TextChanged" Margin="16,48,0,0" Padding="10,5" UseLayoutRounding="True"/>
+                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVoltage" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="TVoltage_TextChanged" Margin="16,48,0,0" Padding="10,5" UseLayoutRounding="True" GotFocus="TVoltage_GotFocus"/>
                                     <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="74" Margin="27,95,0,0">
                                         <RadioButton x:Name="RVoltRMS" Style="{DynamicResource RadioForBlack}" Content="СКЗ" GroupName="VoltParam" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="RVoltRMS_Checked" />
                                     </Viewbox>
@@ -65,7 +65,7 @@
                                     <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="127" Margin="109,95,0,0">
                                         <RadioButton x:Name="RVoltPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="VoltParam" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RVoltPik_Checked" />
                                     </Viewbox>
-                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVoltage_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="TVoltage_dB_TextChanged" Margin="16,125,0,0"/>
+                                    <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVoltage_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" TextChanged="TVoltage_dB_TextChanged" Margin="16,125,0,0" GotFocus="TVoltage_dB_GotFocus"/>
                                     <Label Style="{DynamicResource LableForBlack}"  Content="мВ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="258,51,0,0"/>
                                     <Label Style="{DynamicResource LableForBlack}"  Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="258,128,0,0"/>
                                     <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="28" Margin="286,0,0,0" RenderTransformOrigin="3.263,0.821">
@@ -96,13 +96,13 @@
                             <Viewbox Margin="0,0,362,48" Height="40" HorizontalAlignment="Right" Width="280" VerticalAlignment="Bottom" Stretch="Fill">
                                 <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TAcceleration" TextWrapping="Wrap" TextChanged="TAcceleration_TextChanged" GotFocus="TAcceleration_GotFocus" Height="40" Width="280"/>
                             </Viewbox>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TAcceleration_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Margin="361,48,0,0" TextChanged="TAcceleration_dB_TextChanged"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TAcceleration_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Margin="361,48,0,0" TextChanged="TAcceleration_dB_TextChanged" GotFocus="TAcceleration_dB_GotFocus"/>
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GBVel" Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" Height="135.667" VerticalAlignment="Top" Width="661.333"  BorderBrush="{x:Null}" Margin="25.333,446.5,0,0" UseLayoutRounding="False">
                         <Grid HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="661">
                             <Label x:Name="LVel" Style="{DynamicResource LableForBlack}" Content="Скорость" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,5,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVelocity" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TVelocity_TextChanged" Margin="17,48,0,0"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVelocity" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TVelocity_TextChanged" Margin="17,48,0,0" GotFocus="TVelocity_GotFocus"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="74" Margin="24,98,0,0">
                                 <RadioButton x:Name="RVelRMS" Style="{DynamicResource RadioForBlack}" Content="СКЗ" GroupName="VelocityParams" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="RVelRMS_Checked" />
                             </Viewbox>
@@ -112,7 +112,7 @@
                             <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="77" Margin="109,98,0,0">
                                 <RadioButton x:Name="RVelPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="VelocityParams" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RVelPik_Checked" />
                             </Viewbox>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVelocity_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Margin="361,48,0,0" TextChanged="TVelocity_dB_TextChanged"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVelocity_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Margin="361,48,0,0" TextChanged="TVelocity_dB_TextChanged" GotFocus="TVelocity_dB_GotFocus"/>
                             <Label Style="{DynamicResource LableForBlack}"  Content="мм/с­" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}"  Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="28" Margin="633,0,0,0">
@@ -123,7 +123,7 @@
                     <GroupBox x:Name="GBDis" Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" Height="135.667" VerticalAlignment="Top"  BorderBrush="{x:Null}" Margin="27.333,602.5,0,0" UseLayoutRounding="False" Width="661.333">
                         <Grid HorizontalAlignment="Left" Height="136" VerticalAlignment="Top" Width="661">
                             <Label x:Name="LDis" Style="{DynamicResource LableForBlack}" Content="Перемещение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,5,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TDisplasment" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Margin="17,48,0,0" TextChanged="TDisplasment_TextChanged"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TDisplasment" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Margin="17,48,0,0" TextChanged="TDisplasment_TextChanged" GotFocus="TDisplasment_GotFocus"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="74" Margin="24,98,0,0">
                                 <RadioButton x:Name="RDisRMS" Style="{DynamicResource RadioForBlack}" Content="СКЗ" GroupName="DisplaceParams" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="RDisRMS_Checked" />
                             </Viewbox>
@@ -133,7 +133,7 @@
                             <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="77" Margin="109,98,0,0">
                                 <RadioButton x:Name="RDisPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="DisplaceParams" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RDisPik_Checked" />
                             </Viewbox>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TDisplasment_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" TextChanged="TDisplasment_dB_TextChanged" Margin="361,48,0,0"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TDisplasment_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" TextChanged="TDisplasment_dB_TextChanged" Margin="361,48,0,0" GotFocus="TDisplasment_dB_GotFocus"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="мкм" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="28" Margin="633,0,0,0">
@@ -152,15 +152,15 @@
                     <GroupBox Style="{DynamicResource BlackGroupBox}" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="{x:Null}" UseLayoutRounding="False" Margin="707.166,293,0,0" Width="314" Height="443">
                         <Grid>
                             <Label Style="{DynamicResource LableForBlack}" Content="Автоспектры" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,4,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TBoundaryFreq" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TBoundaryFreq_TextChanged" Margin="109,54,0,0" Text="1600"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TLineCount" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,122,0,0" RenderTransformOrigin="0.522,-0.603" TextChanged="TLineCount_TextChanged" Text="1600"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TBoundaryFreq" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TBoundaryFreq_TextChanged" Margin="109,54,0,0" Text="1600" GotFocus="TBoundaryFreq_GotFocus"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TLineCount" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,122,0,0" RenderTransformOrigin="0.522,-0.603" TextChanged="TLineCount_TextChanged" Text="1600" GotFocus="TLineCount_GotFocus"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="Fгр, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,57,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="N, линий" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,122,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TDivisionFreq" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,191,0,0"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TDivisionFreq" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TSensitivity_TextChanged" Margin="109,191,0,0" GotFocus="TDivisionFreq_GotFocus"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="∆F, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,191,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="Ближайшие центры каналов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,260,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TFerstFreqCenterChannel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,313,0,0"/>
-                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TSecondFreqCenterChannel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,375,0,0"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TFerstFreqCenterChannel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,313,0,0" GotFocus="TFerstFreqCenterChannel_GotFocus"/>
+                            <TextBox Style="{DynamicResource TextBoxForBlack}" IsReadOnly="True" x:Name="TSecondFreqCenterChannel" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Margin="109,375,0,0" GotFocus="TSecondFreqCenterChannel_GotFocus"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="F1, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,316,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="F2, Гц" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,375,0,0"/>
 
