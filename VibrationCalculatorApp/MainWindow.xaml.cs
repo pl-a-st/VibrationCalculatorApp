@@ -160,6 +160,14 @@ namespace VibrationCalculatorApp {
                 if (RSens_mV_m_s2.IsChecked ?? false) {
                     sensitivityType = SensitivityType.mV_mS2;
                 }
+                if (RSens_mV_mm_s.IsChecked ?? false)
+                {
+                    sensitivityType = SensitivityType.mV_mS2;
+                }
+                if(RSens_mV_mkm.IsChecked?? false)
+                {
+                    sensitivityType = SensitivityType.mV_mS2;
+                }
                 AppViewModel.SetTSensAndALL(TSensitivity.Text, sensitivityType, TakeFreeze());
                 AppViewModel.TSens.Access = Access.Blocked;
                 PushAllTexbox(Parametr.Sensitivity);
@@ -479,6 +487,8 @@ namespace VibrationCalculatorApp {
                 GBVel.Visibility = Visibility.Visible;
                 LVel.Content = "Скорость";
                 LAcc.Content = "Ускорение";
+                LAccDim.Content = "м/с­­²";
+                LVelDim.Content = "мм/с";
                 AppViewModel.TSens.SensitivityType = SensitivityType.mV_g;
                 AppViewModel.SetAll();
                 PushAllTexbox();
@@ -652,16 +662,34 @@ namespace VibrationCalculatorApp {
         }
 
         private void RSens_mV_mm_s_Checked(object sender, RoutedEventArgs e) {
-            GBDis.Visibility = Visibility.Hidden;
-            GBVel.Visibility = Visibility.Visible;
-            LVel.Content = "Перемещение";
-            LAcc.Content = "Скорость";
+           
+            if (InitializeComponentStatus == Pocess.Finish)
+            {
+                GBDis.Visibility = Visibility.Hidden;
+                GBVel.Visibility = Visibility.Visible;
+                LVel.Content = "Перемещение";
+                LAcc.Content = "Скорость";
+                LAccDim.Content = "мм/с";
+                LVelDim.Content = "мкм";
+                AppViewModel.TSens.SensitivityType = SensitivityType.mV_mS2;
+                AppViewModel.SetAll();
+                PushAllTexbox();
+            }
         }
 
         private void RSens_mV_mkm_Checked(object sender, RoutedEventArgs e) {
-            GBDis.Visibility = Visibility.Hidden;
-            GBVel.Visibility = Visibility.Hidden;
-            LAcc.Content = "Перемещение";
+            if (InitializeComponentStatus == Pocess.Finish)
+            {
+                GBDis.Visibility = Visibility.Hidden;
+                GBVel.Visibility = Visibility.Hidden;
+                LAcc.Content = "Перемещение";
+                LAccDim.Content = "мкм";
+                AppViewModel.TSens.SensitivityType = SensitivityType.mV_mS2;
+                AppViewModel.SetAll();
+                PushAllTexbox();
+            }
+           
+           
         }
 
         private void TBoundaryFreq_TextChanged(object sender, TextChangedEventArgs e) {

@@ -88,7 +88,7 @@
                             <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="77" Margin="109,98,0,0">
                                 <RadioButton x:Name="RAccPik" Style="{DynamicResource RadioForBlack}" GroupName="AccelerationParams" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False" Checked="RAccPik_Checked"/>
                             </Viewbox>
-                            <Label Style="{DynamicResource LableForBlack}"  Content="м/с­­²" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
+                            <Label x:Name="LAccDim" Style="{DynamicResource LableForBlack}"  Content="м/с­­²" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}"  Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="28" Margin="631,0,0,0">
                                 <RadioButton x:Name="RFreezAcc" Style="{DynamicResource RadioForBlack}"  GroupName="Freez" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Width="15"/>
@@ -113,7 +113,7 @@
                                 <RadioButton x:Name="RVelPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="VelocityParams" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RVelPik_Checked" />
                             </Viewbox>
                             <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TVelocity_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Margin="361,48,0,0" TextChanged="TVelocity_dB_TextChanged" GotFocus="TVelocity_dB_GotFocus"/>
-                            <Label Style="{DynamicResource LableForBlack}"  Content="мм/с­" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
+                            <Label x:Name="LVelDim" Style="{DynamicResource LableForBlack}"  Content="мм/с­" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}"  Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="28" Margin="633,0,0,0">
                                 <RadioButton x:Name="RFreezVel" Style="{DynamicResource RadioForBlack}"  GroupName="Freez" HorizontalAlignment="Left" VerticalAlignment="Top" Width="15"/>
@@ -134,7 +134,7 @@
                                 <RadioButton x:Name="RDisPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="DisplaceParams" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RDisPik_Checked" />
                             </Viewbox>
                             <TextBox Style="{DynamicResource TextBoxForBlack}"  x:Name="TDisplasment_dB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" TextChanged="TDisplasment_dB_TextChanged" Margin="361,48,0,0" GotFocus="TDisplasment_dB_GotFocus"/>
-                            <Label Style="{DynamicResource LableForBlack}" Content="мкм" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
+                            <Label x:Name="LDesDim" Style="{DynamicResource LableForBlack}" Content="мкм" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,48,0,0"/>
                             <Label Style="{DynamicResource LableForBlack}" Content="дБ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="615,48,0,0"/>
                             <Viewbox Style="{DynamicResource ViewboxForAll}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="28" Margin="633,0,0,0">
                                 <RadioButton x:Name="RFreezDis" Style="{DynamicResource RadioForBlack}"  GroupName="Freez" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="15"/>
