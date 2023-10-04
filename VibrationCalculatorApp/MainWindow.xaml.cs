@@ -41,6 +41,7 @@ namespace VibrationCalculatorApp {
     public partial class MainWindow : Window {
         public Pocess InitializeComponentStatus = Pocess.InPocess;
         public Pocess ChangeTextbox = Pocess.Finish;
+        
         public MainWindow() {
             InitializeComponent();
             InitializeComponentStatus = Pocess.Finish;
