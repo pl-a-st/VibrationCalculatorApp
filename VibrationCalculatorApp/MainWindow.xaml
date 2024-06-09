@@ -60,7 +60,7 @@
                                         <RadioButton x:Name="RVoltRMS" Style="{DynamicResource RadioForBlack}" Content="СКЗ" GroupName="VoltParam" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="RVoltRMS_Checked" />
                                     </Viewbox>
                                     <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="98" Margin="199,95,0,0">
-                                        <RadioButton x:Name="RVoltPikPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="VoltParam" Content="Размах" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RVoltPikPik_Checked" />
+                                        <RadioButton x:Name="RVoltPikPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="VoltParam" Content="Размах" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RVoltPikPik_Checked" RenderTransformOrigin="0.833,0.833" />
                                     </Viewbox>
                                     <Viewbox Style="{DynamicResource ResourceKey=ViewboxForAll}" HorizontalAlignment="Left" Height="25                                  " VerticalAlignment="Top" Width="127" Margin="109,95,0,0">
                                         <RadioButton x:Name="RVoltPik" Style="{DynamicResource ResourceKey=RadioForBlack}" GroupName="VoltParam" Content="ПИК" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RVoltPik_Checked" />

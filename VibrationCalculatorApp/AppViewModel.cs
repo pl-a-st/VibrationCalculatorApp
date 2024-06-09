@@ -293,7 +293,7 @@ namespace VibrationCalculatorApp {
             TVel_dB.SetText(VibroCalc.Velocity.Get_dB());
             TDis_dB.SetText(VibroCalc.Displacement.Get_dB());
         }
-        private static void SetTVolt() {
+        public static void SetTVolt() {
             if (TVolt.MagnitudeType == MagnitudeType.RMS) {
                 TVolt.SetText(VibroCalc.Voltage.GetRMS());
             }
@@ -304,7 +304,7 @@ namespace VibrationCalculatorApp {
                 TVolt.SetText(VibroCalc.Voltage.GetPIK_PIK());
             }
         }
-        private static void SetTAcc() {
+        public static void SetTAcc() {
             if (TAcc.MagnitudeType == MagnitudeType.RMS) {
                 TAcc.SetText(VibroCalc.Acceleration.GetRMS());
             }
@@ -315,7 +315,7 @@ namespace VibrationCalculatorApp {
                 TAcc.SetText(VibroCalc.Acceleration.GetPIK_PIK());
             }
         }
-        private static void SetTVel() {
+        public static void SetTVel() {
             if (TVel.MagnitudeType == MagnitudeType.RMS) {
                 TVel.SetText(VibroCalc.Velocity.GetRMS());
             }
@@ -326,7 +326,7 @@ namespace VibrationCalculatorApp {
                 TVel.SetText(VibroCalc.Velocity.GetPIK_PIK());
             }
         }
-        private static void SetTDis() {
+        public static void SetTDis() {
             if (TDis.MagnitudeType == MagnitudeType.RMS) {
                 TDis.SetText(VibroCalc.Displacement.GetRMS());
             }
@@ -337,7 +337,7 @@ namespace VibrationCalculatorApp {
                 TDis.SetText(VibroCalc.Displacement.GetPIK_PIK());
             }
         }
-        private static void SetTSens() {
+        public static void SetTSens() {
             if (TSens.SensitivityType == SensitivityType.mV_g) {
                 TSens.SetText(VibroCalc.Sensitivity.Get_mV_G());
             }
@@ -345,7 +345,7 @@ namespace VibrationCalculatorApp {
                 TSens.SetText(VibroCalc.Sensitivity.Get_mV_MS2());
             }
         }
-        private static void SetTFreq() {
+        public static void SetTFreq() {
             if (TFreq.FrequencyType == FrequencyType.Hz) {
                 TFreq.SetText(VibroCalc.Frequency.Get_Hz());
             }
